@@ -1,18 +1,17 @@
-// Product.js
 import React, { useState } from 'react';
 import './Product.css';
 
 const Product = ({ product, updateQuantity, removeProduct }) => {
   const { id, name, price } = product;
-  const [quantity, setQuantity] = useState(product.quantity); // Track quantity
-  const [totalPrice, setTotalPrice] = useState(price * quantity); // Track total price for this product
+  const [quantity, setQuantity] = useState(product.quantity);
+  const [totalPrice, setTotalPrice] = useState(price * quantity); 
 
   const handleQuantityChange = (e) => {
     const newQuantity = typeof e === "number" ? e : parseInt(e.target.value, 10) || 0;
     setQuantity(newQuantity);
     const newTotalPrice = price * newQuantity;
     setTotalPrice(newTotalPrice);
-    updateQuantity(id, newQuantity); // Update quantity in the parent component (Cart)
+    updateQuantity(id, newQuantity);
   };
 
   return (
