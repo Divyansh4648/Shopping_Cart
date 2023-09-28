@@ -1,4 +1,3 @@
-// intl.js
 import { IntlProvider } from 'react-intl';
 import React from 'react';
 import App from './App';
