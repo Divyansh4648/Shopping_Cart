@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import Product from './Product';
-import './Cart.css'; // Import your Cart.css styles
+import './Cart.css';
 
 const Cart = ({ products }) => {
   const [discount, setDiscount] = useState(0);
 
-  // State to manage product quantities
+ 
   const [productQuantities, setProductQuantities] = useState(
     products.reduce((quantities, product) => {
       quantities[product.id] = product.quantity;
